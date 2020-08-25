@@ -52,13 +52,9 @@ public static ListNode GetIntersectionNode(ListNode headA, ListNode headB)
     var lenB = GetCount(headB);
     var diff = Math.Abs(lenA - lenB);
     if(lenA > lenB)
-    {
         VisitTillDiff(ref headA, diff);
-    }
     else
-    {
         VisitTillDiff(ref headB, diff);
-    }
 
     while(headA != null)
     {
