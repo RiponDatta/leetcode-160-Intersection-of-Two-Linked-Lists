@@ -1,4 +1,4 @@
-# leetcode-160-Intersection-of-Two-Linked-Lists
+# leetcode 160 - Intersection of Two Linked Lists
 
 ## C#
 ```C#
