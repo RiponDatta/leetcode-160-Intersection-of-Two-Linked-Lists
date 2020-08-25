@@ -23,7 +23,9 @@ static void Main(string[] args)
 
     GetIntersectionNode(listA, listB);
 }
-
+```
+### Solution 1
+```C#
 public static ListNode GetIntersectionNode(ListNode headA, ListNode headB)
 {
     var hs = new Hashtable();
@@ -39,5 +41,52 @@ public static ListNode GetIntersectionNode(ListNode headA, ListNode headB)
         headB = headB.next;
     }
     return null;
+}
+```
+
+### Solution 2
+```C#
+public static ListNode GetIntersectionNode(ListNode headA, ListNode headB)
+{
+    var lenA = GetCount(headA);
+    var lenB = GetCount(headB);
+    var diff = Math.Abs(lenA - lenB);
+    if(lenA > lenB)
+    {
+        VisitTillDiff(ref headA, diff);
+    }
+    else
+    {
+        VisitTillDiff(ref headB, diff);
+    }
+
+    while(headA != null)
+    {
+        if (headA == headB) return headA;
+        headA = headA.next;
+        headB = headB.next;
+    }
+    return null;
+}
+
+private static void VisitTillDiff(ref ListNode head, int diff)
+{
+    while (diff > 0)
+    {
+        head = head.next;
+        diff--;
+    }
+}
+
+private static int GetCount(ListNode node)
+{
+    var current = node;
+    int count = 0;
+    while(current != null)
+    {
+        count++;
+        current = current.next;
+    }
+    return count;
 }
 ```
