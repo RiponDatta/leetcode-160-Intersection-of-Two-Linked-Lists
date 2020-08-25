@@ -43,6 +43,10 @@ public static ListNode GetIntersectionNode(ListNode headA, ListNode headB)
     return null;
 }
 ```
+#### Complexity Analysis
+
+* Time Complexity: O(m+n)
+* Space Complexity: O(min(m,n))
 
 ### Solution 2
 ```C#
@@ -86,3 +90,7 @@ private static int GetCount(ListNode node)
     return count;
 }
 ```
+#### Complexity Analysis
+
+* Time Complexity: O(m+n)
+* Space Complexity: O(1)
